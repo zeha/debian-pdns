@@ -2,4 +2,5 @@ debian/tmp/usr/lib/powerdns/libgmysqlbackend.so* usr/lib/powerdns/
 debian/tmp/usr/lib/powerdns/libgmysqlbackend.a usr/lib/powerdns/
 debian/sql/mysql/mysql usr/share/dbconfig-common/data/pdns-backend-mysql/install/
 debian/sql/mysql/3.0-1 usr/share/dbconfig-common/data/pdns-backend-mysql/upgrade/mysql/
+debian/sql/mysql/3.3-1 usr/share/dbconfig-common/data/pdns-backend-mysql/upgrade/mysql/
 debian/config/pdns.local.gmysql.conf usr/share/pdns-backend-mysql
