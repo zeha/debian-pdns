@@ -9,7 +9,7 @@ UPDATE records SET name=lower(name);
 ALTER TABLE records ADD CONSTRAINT c_lowercase_name CHECK (((name)::text = lower((name)::text)));
 
 -- Change ip VARCHAR(25) -> VARCHAR(64)
-ALTER TABLE supermasters ALTER COLUMN ip TYPE VARCHAR(64) NOT NULL;
+ALTER TABLE supermasters ALTER COLUMN ip TYPE VARCHAR(64);
 
 -- Recreate index
 DROP INDEX IF EXISTS orderindex;
