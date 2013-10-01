@@ -1,0 +1,5 @@
+ALTER TABLE records MODIFY content VARCHAR(64000);
+alter table records modify ordername    VARCHAR(255) BINARY;
+drop index orderindex on records;
+create index recordorder on records (domain_id, ordername);
+alter table supermasters modify ip VARCHAR(64);
