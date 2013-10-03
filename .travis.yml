@@ -6,5 +6,5 @@ before_script:
  - sudo apt-get install git-buildpackage pbuilder debian-archive-keyring dh-autoreconf
  - sudo pbuilder create --distribution sid  --mirror ftp://ftp.nl.debian.org/debian/ --debootstrapopts "--keyring=/usr/share/keyrings/debian-archive-keyring.gpg"
 script:
- - DIST=sid BUILDER=pbuilder git-buildpackage --git-pbuilder --git-ignore-branch
+ - DIST=sid BUILDER=pbuilder strace -f git-buildpackage --git-pbuilder --git-ignore-branch
  - false
