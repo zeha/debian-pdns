@@ -5,7 +5,8 @@ create table domains (
  last_check      INT DEFAULT NULL,
  type            VARCHAR(6) NOT NULL,
  notified_serial INT DEFAULT NULL, 
- account         VARCHAR(40) DEFAULT NULL
+ account         VARCHAR(40) DEFAULT NULL,
+ CONSTRAINT c_lowercase_name CHECK (((name)::text = lower((name)::text)))
 );
 CREATE UNIQUE INDEX name_index ON domains(name);
   
@@ -74,7 +75,8 @@ create table tsigkeys (
  id         SERIAL PRIMARY KEY,
  name       VARCHAR(255),
  algorithm  VARCHAR(50), 
- secret     VARCHAR(255)
+ secret     VARCHAR(255),
+ constraint c_lowercase_name check (((name)::text = lower((name)::text)))
 );
 
 create unique index namealgoindex on tsigkeys(name, algorithm);
